@@ -1,29 +1,28 @@
-int pin = 13;
+int incomingByte = 0;
 
 void setup() {
-  Serial.begin(4800);
-  Serial.println("<Arduino is ready>");
-  pinMode(pin, OUTPUT);
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+
+  // put your setup code here, to run once:
+
 }
 
 void loop() {
-  boolean light = false;
-  float value = 0;
-  if (Serial.available() > 0) {
-    // read the incoming byte:
-    value = Serial.parseFloat();
 
-    // say what you got:
-    Serial.print("I received: ");
-    Serial.println(value);
-  }
-  if (value ==1 and light==false) {
-    digitalWrite(pin, HIGH);
-    light= true;
-  else{
-    light=false
-    digitalWrite(pin, LOW);
-  }
+  if (Serial.available()> 0){
+    if (Serial.read() == '1'){
     
+     digitalWrite(LED_BUILTIN,HIGH);
+    }
+    else{
+      digitalWrite(LED_BUILTIN,LOW);
+    }
+
+  
+   
+     }
   }
-}
+
+
+
