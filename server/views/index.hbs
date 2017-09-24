@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+	    <meta charset="UTF-8">
+
+  		<meta name="description" content="AmuseBrains">
+  		<meta name="keywords" content="Muse, Arduino, MuseLab">
+  		<meta name="author" content="Team AmuseBrains">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	    <title>AmuseBrains</title>
+
+	    <link rel="shortcut_icon" src="">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    <!-- Compiled and minified CSS -->
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  		<link rel="stylesheet" href="css/jquery.fullPage.css">
+  		<link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/firstpage.css" />
+
+
+  		<!-- Compiled and minified JavaScript -->
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script src="chart.js"></script>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/smoothie.js"></script>
+
+	    <script src="js/jquery.fullpage.min.js"></script>
+	    <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript" src="js/firstpage.js"></script>
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	</head>
+  	<body>
+      <script>
+      $(document).ready(function(){
+        // $.fn.fullpage.moveSectionDown();
+        $.fn.fullpage.setAllowScrolling(true);
+
+        // setTimeout(function(){
+        //   $('body').scrollTop(1000);
+        // },2000);
+
+      });
+
+</script>
+	    <div id="fullpage">
+	    	<div id="first-page" class="section">
+		        <div class="contain-content">
+		          <!-- introduction -->
+		          <h1 class="first-heading">Welcome to <br> AmuseBrains</h1>
+              <p class="little-des">
+                AmuseBrains is an interface that utlizes Muse. </br>
+                Confirm your connection by blinking three times.
+              </p>
+              <button id="getStarted" class="start">Get Started</button>
+
+		          <!-- login icons -->
+
+		          <!-- Toast -->
+              <div class="contain-dots">
+                <div class="contain-dots-them">
+                  <ul class="ul-dots">
+                    <div class="contain-inside-dots">
+                      <li class="a-dot">
+                          <span id="firstBlinkFlash"></span>
+                      </li>
+                    </div>
+                    <div class="contain-inside-dots">
+                      <li class="a-dot">
+                          <span id="secondBlinkFlash"></span>
+                      </li>
+                    </div>
+                    <div class="contain-inside-dots">
+                      <li class="a-dot">
+                          <span id="thirdBlinkFlash"></span>
+                      </li>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+              <script>
+                $('.start').click(function(){
+                  $('.contain-dots').css('visibility','visible');
+                  $('.contain-dots').css('opacity','1');
+                  $('.contain-dots').css('bottom','20px');
+                });
+              </script>
+		        </div>
+	      	</div>
+	    	<div id="second-page" class="section">
+	    		<div class="contain-usage">
+	    			<h1 class="second-page-heading">How to use AmuseBrains:</h1>
+	    			<h2 class="second-page-second-heading">It's very simple to use our service.
+              <br/>
+
+               You need a few hardwares to make this thing run.</h2>
+	    			<div class="row csenter">
+				         <div class="col s4 m4">
+          					<div class="card orange hoverable">
+            					<div class="card-image">
+              						<img src="assets/images/arduino.png">
+            					</div>
+            					<div class="card-content">
+              						<p><strong>Arduino</strong></p>
+            					</div>
+            				</div>
+          				</div>
+	    				<div class="col s4 m4">
+          					<div class="card hoverable">
+            					<div class="card-image">
+              						<img src="assets/images/muse.png">
+            					</div>
+            					<div class="card-content">
+              						<p><strong>Muse</strong></p>
+            					</div>
+          					</div>
+        				</div>
+				        <div class="col s4 m4">
+          					<div class="card hoverable blue">
+            					<div class="card-image">
+              						<img src="assets/images/muselab.png">
+            					</div>
+            					<div class="card-content">
+              						<p><strong>MuseLab SDK</strong></p>
+            					</div>
+          					</div>
+        				</div>
+	    			</div>
+
+	    			<!-- <p>Here we go you have checked all our hardware requirements that you need to connect with the service</p> -->
+	    		</div>
+	    	</div>
+	    	<div id="third-page" class="section">
+          <link rel="stylesheet" href="/css/wildcard.css" />
+          <h1 class="third-heading">Your Fp1 EEG Brain Data.</h1>
+          <canvas id="mycanvas" width="600" height="150"></canvas>
+          <script>
+            var smoothie = new SmoothieChart();
+            smoothie.streamTo(document.getElementById("mycanvas"));
+            var line1 = new TimeSeries();
+
+            // Add a random value to each line every second
+            setInterval(function() {
+              line1.append(new Date().getTime(),arrayValues[arrayValues.length -1]);
+            }, 500);
+
+            // Add to SmoothieChart
+            smoothie.addTimeSeries(line1);
+
+            smoothie.streamTo(document.getElementById("mycanvas"), 1000 /*delay*/);
+
+          </script>
+
+  	    		<div class="row">
+
+  	    		</div>
+  	    		<div class="row">
+  	    			<!-- <div class="desc_arduino col s6">
+                <img src="assets/images/arduino_uno.jpg" style="width: 70%; height: auto;">
+                <p>Arduino UNO</p>
+                <p>The UNO is the best board to get started with electronics and coding. If this is your first experience tinkering with the platform, the UNO is the most robust board you can start playing with. The UNO is the most used and documented board of the whole Arduino family.</p>
+                <a href="https://store.arduino.cc/usa/arduino-uno-rev3">More info</a>
+  	    			</div> -->
+  	    			<div class="desc_muse-headgear col s6">
+                <img src="assets/images/muse-headgear.png">
+
+                <h2 class="muse-headgear-heading">Muse Headgear</h2>
+
+                <p>Muse is an electroencephalography (EEG) technology. An EEG is a cell-established, non-invasive, harmless method of recording the electrical activity of groups of brain  cells.</p>
+                <style>
+                  .muse-headgear-heading{
+                    color:white;
+                    font-size:20px;
+                    margin-top: 10px;
+                    width:100%;
+                    text-align: center;
+                  }
+                  .desc_muse-headgear > p{
+                    width:100%;
+                    text-align: center;
+                  }
+                  .desc_muse-headgear >img{
+                    width:300px !important;
+                  }
+                </style>
+              </div>
+              <div id="contain-graph" class="desc_muse-headgear col s6">
+                <p class="anxiety-label">Your anxiety level:</p>
+                <style>
+                  p.anxiety-label{
+                    margin-bottom:20px;
+                    font-size:20px;
+                    color:white;
+                    width:100%;
+                  }
+                  #myChart{
+                    display:block;
+                    margin:auto;
+                  }
+                </style>
+                <canvas id="myChart" height="200" width="200"></canvas>
+
+                <p>
+                  anxietyValue
+                </p>
+                <script>
+
+                  var pieData = [
+                    {
+                      value: parseInt(anxietyValue*100),
+                      color:"#EF9898"
+                    },
+                    {
+                      value : parseInt(100-(anxietyValue*100)),
+                      color : "#BDDEFB"
+                    }
+                  ];
+
+                    var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(pieData,{percentageInnerCutout : 80});
+                    setInterval(function(){
+                      pieData = [
+                        {
+                          value: parseInt(anxietyValue*100),
+                          color:"#EF9898"
+                        },
+                        {
+                          value : parseInt(100-(anxietyValue*100)),
+                          color : "#BDDEFB"
+                        }
+                      ];
+                      var pieOptions = {
+                            animation : false,  // Edit: correction typo: from 'animated' to 'animation'
+                            percentageInnerCutout: 80
+                      }
+
+                      $('#myChart').remove();
+                      $('#contain-graph').append(`<canvas id="myChart" height="200" width="200"></canvas>`);
+                      var myPie = new Chart(document.getElementById("myChart").getContext("2d")).Doughnut(pieData,pieOptions);
+
+                  },500);
+                </script>
+              </div>
+  	    		</div>
+
+	    		<div class="row">
+
+	    		</div>
+	    		<div class="row">
+	    			<div class="">
+
+	    			</div>
+	    			<div class="">
+
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div id="fourth-page" class="section">
+          <h1 class="fourth-heading">Analysis of your brain impulses.</h1>
+          <div class="row contain-row">
+            <div id="contain-short-memory"class="col-md-3">
+              <h2 class="col-label">Short Term Memory</h2>
+              <canvas id="shortTermMemory" class="fourth-page-charts" height="200" width="200"></canvas>
+            </div>
+            <div id="contain-short-attention" class="col-md-3">
+              <h2 class="col-label">Short Term Attention</h2>
+              <canvas id="shortTermAttention" class="fourth-page-charts" height="200" width="200"></canvas>
+            </div>
+            <div class="col-md-3">
+              <h2 class="col-label">Short Term Attention</h2>
+              <canvas id="shortT" class="fourth-page-charts" height="200" width="200"></canvas>
+            </div>
+            <div class="col-md-3">
+              <h2 class="col-label">Short Term Attention</h2>
+              <canvas id="shortB" class="fourth-page-charts" height="200" width="200"></canvas>
+            </div>
+          </div>
+          <style>
+          .contain-row{
+            padding:50px;
+            padding-top:5px;
+          }
+            .col-label{
+              font-size:20px;
+              width:100%;
+              text-align: center;
+              margin-bottom:40px;
+            }
+            .fourth-heading{
+              font-size:50px;
+              width:100%;
+              text-align: center;
+            }
+
+          </style>
+          <script>
+            var shortTermMemoryPieData = [];
+            var shortTermAttentionPieData = [];
+
+            var shortTermMemoryPieData = [
+              {
+                value: parseInt(shortTermMemoryValue*100),
+                color:"#EF9898"
+              },
+              {
+                value : parseInt(100-(shortTermMemoryValue*100)),
+                color : "#BDDEFB"
+              }
+            ];
+            var shortTermAttentionPieData = [
+              {
+                value: parseInt(shortTermAttentionValue*100),
+                color:"#EF9898"
+              },
+              {
+                value : parseInt(100-(shortTermAttentionValue*100)),
+                color : "#BDDEFB"
+              }
+            ];
+            var pieOptions = {
+                  animation : false,  // Edit: correction typo: from 'animated' to 'animation'
+                  percentageInnerCutout: 80
+            }
+
+            var myPie = new Chart(document.getElementById("shortTermMemory").getContext("2d")).Doughnut(pieData,{percentageInnerCutout : 80});
+            var myPie = new Chart(document.getElementById("shortTermAttention").getContext("2d")).Doughnut(pieData,{percentageInnerCutout : 80});
+
+            setInterval(function(){
+              shortTermMemoryPieData = [
+                {
+                  value: parseInt(shortTermMemoryValue*100),
+                  color:"#EF9898"
+                },
+                {
+                  value : parseInt(100-(shortTermMemoryValue*100)),
+                  color : "#BDDEFB"
+                }
+              ];
+              shortTermAttentionPieData = [
+                {
+                  value: parseInt(shortTermAttentionValue*100),
+                  color:"#EF9898"
+                },
+                {
+                  value : parseInt(100-(shortTermAttentionValue*100)),
+                  color : "#BDDEFB"
+                }
+              ];
+              $('.fourth-page-charts').remove();
+              $('#contain-short-memory').append(`<canvas id="shortTermMemory" class="fourth-page-charts" height="200" width="200"></canvas>`);
+              $('#contain-short-attention').append(`<canvas id="shortTermAttention" class="fourth-page-charts" height="200" width="200"></canvas>`);
+              var myPie = new Chart(document.getElementById("shortTermMemory").getContext("2d")).Doughnut(shortTermMemoryPieData,pieOptions);
+              var myPie = new Chart(document.getElementById("shortTermAttention").getContext("2d")).Doughnut(shortTermAttentionPieData,pieOptions);
+          },500);
+          </script>
+
+
+          <!-- <h4>The Attention Memory & Working Memory</h4>
+          <div class="row">
+            <div class="col s3">
+              Attention Memory
+              <p>Extensive Cognitive Attentional Analysis could be carried using our interface system with Muse. Both long term and short-term attention analysis could be carried out over a given span of data recording. This could be particularly beneficial to students studying in school and working with children and people suffering from Attention Deficit Disorders and dyslexia</p>
+
+              <p>Attention</p>
+              <p>Short Memory</p>
+              <p>Large Memory</p>
+            </div>
+            <div class="col s6">
+              <img src="" alt="Attention Memory Graph">
+
+            </div>
+          </div>
+            <div class="row">
+              <div class="col s6 ">
+                <img src="" alt="Working Memory Graph">
+              </div>
+              <div class="col s6">
+                Working Memory
+
+                <p>By using neural analysis decomposition techniques, we could extract working memory features to actually understand how much memory retention took place at a cognitive level. High correlation between working memory and literacy and arithmetic makes the analysis of memory super helpful to understand numerical math capabilities and logical understanding in people.
+
+                Orthogonal Based n= 6 layer wavelet decomposition techniques in MATLAB and formulaic methods were used to come up with a numerical computation of attention and memory.</p>
+              </div>
+            </div> -->
+        </div>
+	    	<div id="fifth-page" class="section">Some section</div>
+	    	<div id="sixth-page" class="section">Some section</div>
+        <div id="seventh-page" class="section profile-page">
+          <h1 class="profile-heading">About Us</h1>
+          <div class="row">
+            <div class="card col s3">
+              <img src="">
+              <div>
+                <h4>Chan Woo Kim</h4>
+                <div class="card-activity">
+                  <h5>I’m a full-stack web developer proficient in using the MEAN stack. Outside of programming, I love making music, may that be writing songs on my guitar or producing electronic music on my computer. I’m currently a high school student and MHacks X was my first hackathon!</h5>
+                </div>
+              </div>
+          </div>
+          <style>
+            .profile-page{
+              padding:30px;
+            }
+            .profile-heading{
+              font-size:40px;
+              color:white;
+            }
+          </style>
+
+            <div class="card col s3">
+              <img src="">
+            <div>
+              <h4>Karl Zhu</h4>
+              <div class="card-activity">
+                <h5>An up and coming general computer programmer. A 15 year old from Windsor, Canada, and currently taking on many leadership opportunities within national nonprofits. I love learning and coming to hackathons, as MHacks 10 is my 6th!</h5>
+        </div>
+        </div>
+          </div>
+
+            <div class="card col s3">
+              <img src="">
+            <div>
+              <h4>Rohan Hundia</h4>
+              <div class="card-activity">
+                <h5>Love Converting Caffeine Into Code! An 18 year old computational neuroscience researcher, programmer and AI technnologist. I love working on ML algorithms and data analysis. Have been doing research for almost 2 years now.</h5>
+              </div>
+            </div>
+          </div>
+
+            <div class="card col s3">
+              <img src="">
+            <div>
+              <h4>Vishesh Gupta</h4>
+              <div class="card-activity">
+              <h5>Simple and Elegant Front-End Developer. 19 Year-old studying in Waterloo and a Microsoft Student Partner. Love programming and learning new cool stuff, taking challenges and an aptitude for greatness</h5> </div>
+            </div>
+            </div>
+            </div>
+          </div>
+          <div id="eigth-page" class="section">Some section</div>
+	    </div>
+  	</body>
+</html>

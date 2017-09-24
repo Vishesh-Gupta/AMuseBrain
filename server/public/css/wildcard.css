@@ -1,0 +1,23 @@
+#third-page{
+  padding:30px;
+  padding-top:5px;
+}
+.third-heading{
+    font-size:30px;
+    color:white;
+    width:100%;
+    text-align: center;
+
+}
+#mycanvas{
+  display:block;
+  margin:auto;
+}
+
+.col{
+
+}
+.col > img{
+  display:block;
+  margin:auto;
+}
