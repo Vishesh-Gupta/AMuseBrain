@@ -17,27 +17,36 @@ var server = http.createServer(app);
 var io = socketIO(server);
 
 io.on('connection', (socket) => {
-  io.emit('new client', {
-      text:socket.id
+  var thisID = socket.id;
+  var newClient = new TextInput({
+    socketID:thisID
   });
-  io.on('eyes open', () => {
+  io.emit('new client', {
+    text:'new client!'
+  });
+  socket.on('eyes open', () => {
     socket.broadcast.emit('eyes open', {
       id:socket.id,
       text:'opened happened'
     });
   });
-  io.on('eyes close', () => {
+  socket.on('eyes close', () => {
     socket.broadcast.emit('eyes close', {
       id:socket.id,
       text:'closed happened'
     });
   });
-  io.on('new data', (doc) => {
+  socket.on('new data', (doc) => {
     socket.emit('sending new data', {
       id:doc.id,
       dataset:doc.dataset
     });
   });
+  socket.on('channel 1 data', (doc) => {
+    socket.broadcast.emit('challen',{
+      text:doc
+    });
+  })
 });
 
 const publicPath = path.join(__dirname, '/public');
@@ -47,7 +56,7 @@ app.use(bodyParser.json());
 // app.set('view engine','html');
 
 app.get('/', (req, res)=>{
-  res.send();
+  res.render('index');
 });
 
 app.post('/api', (req,res) => {
@@ -60,6 +69,9 @@ app.post('/api', (req,res) => {
   newInputText.save();
   res.send('worked!');
 });
+
+app.set('view engine','hbs');
+
 server.listen(port, () => {
   console.log("Port is up and running at",port);
 });

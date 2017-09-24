@@ -12,7 +12,7 @@ var userData = new Schema({
   },
   id:{
     type:String
-  }
+  },
   idOfPair:{
     type:String
   },
