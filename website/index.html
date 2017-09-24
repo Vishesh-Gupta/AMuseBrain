@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   	<head>
+      <!-- Meta Tags -->
 	    <meta charset="UTF-8">
   		<meta name="description" content="AmuseBrains">
   		<meta name="keywords" content="Muse, Arduino, MuseLab">
   		<meta name="author" content="Team AmuseBrains">
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+      <!-- Title -->
 	    <title>AmuseBrains</title>
 
 	    <link rel="shortcut_icon" src="">
-
 	    <!-- Compiled and minified CSS -->
   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   		<link rel="stylesheet" href="css/jquery.fullPage.css">
@@ -21,10 +22,8 @@
   		<!-- Compiled and minified JavaScript -->
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="/socket.io/socket.io.js"></script>
-
 	    <script src="js/jquery.fullpage.min.js"></script>
 	    <script type="text/javascript" src="js/script.js"></script>
       <script type="text/javascript" src="js/firstpage.js"></script>
@@ -32,6 +31,7 @@
 	</head>
   	<body>
 	    <div id="fullpage">
+        <!-- First Page -->
 	    	<div id="first-page" class="section">
 		        <div class="contain-content">
 		          <!-- introduction -->
@@ -42,8 +42,6 @@
                 Confirm your connection by blinking three times.
               </p>
 		          <!-- login icons -->
-
-		          <!-- Toast -->
               <div class="contain-dots">
                 <div class="contain-dots-them">
                   <ul class="ul-dots">
@@ -65,8 +63,11 @@
                   </ul>
                 </div>
               </div>
+
+              <!-- Toast -->
 		        </div>
 	      	</div>
+          <!-- Second Page -->
 	    	<div id="second-page" class="section">
 	    		<div class="contain-usage">
 	    			<h1 class="second-page-heading">How to use AmuseBrains:</h1>
@@ -116,18 +117,32 @@
 
 	    		</div>
 	    		<div class="row">
-	    			<div class="">
-
+	    			<div class="desc_arduino col s6">
+              <img src="assets/images/arduino_uno.jpg" style="width: 100%; height: 100%;">
+              <p>Arduino UNO</p>
+              <p>The UNO is the best board to get started with electronics and coding. If this is your first experience tinkering with the platform, the UNO is the most robust board you can start playing with. The UNO is the most used and documented board of the whole Arduino family.</p>
+              <a href="https://store.arduino.cc/usa/arduino-uno-rev3">More info</a>
 	    			</div>
-	    			<div class="">
-
+	    			<div class="desc_muse-headgear col s6">
+              <img src="assets/images/muse-headgear.png" style="width: 95%; height: 95%;">
+              <p>Muse Headgear</p>
+              <p>Muse: the brain sensing headband, is an electroencephalography (EEG) technology. EEG is a cell-established, non-invasive, harmless method of recording the electrical activity of groups of brain  cells. EEG provides robust real-time insight into the brain; and Muse is the most versatile and easy-to-use EEG system available.</p>
+              <a href="">More info</a>
 	    			</div>
 	    		</div>
 	    	</div>
+        <!-- Fourth Page -->
 	    	<div id="fourth-page" class="section">Some section</div>
+        <!-- Fifth Page -->
 	    	<div id="fifth-page" class="section">Some section</div>
+
+        <!-- Sixth Pahe -->
 	    	<div id="sixth-page" class="section">Some section</div>
+
+        <!-- Seventh Page -->
 	    	<div id="seventh-page" class="section">Some section</div>
+
+        <!-- Eight Page -->
 	    	<div id="eigth-page" class="section">Some section</div>
 	    </div>
   	</body>
