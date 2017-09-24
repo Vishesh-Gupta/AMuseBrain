@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
 body{
   font-family: 'Raleway';
-
+  box-sizing: border-box;
 }
+
 
 #first-page{
   background-color:#6ED2E6 !important;
@@ -24,6 +25,8 @@ body{
   font-size:60px;
   color:white;
   font-family: 'Raleway';
+  margin-top:60px;
+  margin-bottom:60px;
 }
 .start{
   padding:15px 20px;
@@ -34,9 +37,28 @@ body{
   border:3px solid white;
   border-radius:5px;
   color:white;
+  margin-bottom:40px;
 }
 .start:hover{
   background-color:white;
   color:#6ED2E6;
   transition:all 250ms ease-in-out;
+}
+.little-des{
+  text-align: center;
+  width:100vw;
+  margin-bottom:50px;
+  color:white;
+}
+br{
+  margin-bottom:20px;
+}
+.down{
+
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:30px;
+  display:block;
+  margin:auto;
 }
