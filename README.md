@@ -12,8 +12,8 @@ Through the fundamental programming concepts of Math, Computer Science and incor
 2. Muse Headgear
 
 
-# Other 
--------
+# Other Requirements 
+---------------------
 1. Muse Labs SDK
 2. Arduino Package (can be downloaded from application if you get the other requirements)
 
