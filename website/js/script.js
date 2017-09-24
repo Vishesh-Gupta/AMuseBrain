@@ -77,3 +77,11 @@ $(document).ready(function() {
 $('.start').click(function(){
 	$.fn.fullpage.moveSectionDown();
 });
+
+
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+ });
+ 
+ var $toastContent = $('<span>I am toast content</span>').add($('<button class="btn-flat toast-action">Undo</button>'));
+  Materialize.toast($toastContent, 10000);       

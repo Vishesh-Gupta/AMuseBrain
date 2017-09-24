@@ -17,6 +17,18 @@ body{
 #fourth-page{
   background-color:#A9DBDB !important;
 }
+#fifth-page{
+  background-color:#6ED2E6 !important;
+}
+#sixth-page{
+  background-color:#E0E4CD !important;
+}
+#seventh-page{
+  background-color:#F86920 !important;
+}
+#eight-page{
+  background-color:#A9DBDB !important;
+}
 .first-heading{
   padding-top:0;
   width:100%;
@@ -61,3 +73,4 @@ br{
   display:block;
   margin:auto;
 }
+
