@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   	<head>
-      <!-- Meta Tags -->
 	    <meta charset="UTF-8">
   		<meta name="description" content="AmuseBrains">
   		<meta name="keywords" content="Muse, Arduino, MuseLab">
   		<meta name="author" content="Team AmuseBrains">
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Title of the website -->
 	    <title>AmuseBrains</title>
 
 	    <link rel="shortcut_icon" src="">
+
 	    <!-- Compiled and minified CSS -->
   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   		<link rel="stylesheet" href="css/jquery.fullPage.css">
   		<link rel="stylesheet" href="css/style.css">
-		 <link rel="stylesheet" href="css/style1.css">   
-      <style> 
-        #centre{
-          margin-right: 50%;
-        }
-      </style>
       <link rel="stylesheet" href="css/firstpage.css" />
 
 
   		<!-- Compiled and minified JavaScript -->
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+
 	    <script src="js/jquery.fullpage.min.js"></script>
 	    <script type="text/javascript" src="js/script.js"></script>
       <script type="text/javascript" src="js/firstpage.js"></script>
-		 <script src="js/game.js"; width="100%";></script>
 
 	</head>
   	<body>
 	    <div id="fullpage">
-        <!-- first page -->
 	    	<div id="first-page" class="section">
 		        <div class="contain-content">
 		          <!-- introduction -->
 		          <h1 class="first-heading">Welcome to <br> AmuseBrains</h1>
 		          <button class="start">Get Started</button>
-              <p class="">AmuseBrains is an app that utlizes Amuse.<br>Confirm your connection by blinking three times.</p>
+              <p class="little-des">
+                AmuseBrains is an app that utlizes Amuse. </br>
+                Confirm your connection by blinking three times.
+              </p>
 		          <!-- login icons -->
+
+		          <!-- Toast -->
               <div class="contain-dots">
                 <div class="contain-dots-them">
                   <ul class="ul-dots">
@@ -66,8 +65,6 @@
                   </ul>
                 </div>
               </div>
-		          <!-- Toast -->
-              
 		        </div>
 	      	</div>
 	    	<div id="second-page" class="section">
@@ -113,68 +110,25 @@
 	    			<p>Here we go you have checked all our hardware requirements that you need to connect with the service</p>
 	    		</div>
 	    	</div>
-	    	<!-- Third Page -->
-        <div id="third-page" class="section">
+	    	<div id="third-page" class="section">
 
-          <div class="row">
+	    		<div class="row">
 
-          </div>
-          <div class="row">
-            <div class="desc_arduino col s6">
-              <img src="assets/images/arduino_uno.jpg" style="width: 100%; height: 100%;">
-              <h4>Arduino</h4>
-              <p>The UNO is the best board to get started with electronics and coding. If this is your first experience tinkering with the platform, the UNO is the most robust board you can start playing with. The UNO is the most used and documented board of the whole Arduino family.</p>
-              <a href="https://store.arduino.cc/usa/arduino-uno-rev3">More Info</a>
-            </div>
-            <div class="desc_muse col s6">
-              <img src="assets/images/muse-headgear.png" style="width: 92.5%; height: 92.5%;">
-              <h4>Muse Headgear</h4>
-              <p>Muse: the brain sensing headband, is an electroencephalography (EEG) technology. EEG is a ell-established, non-invasive, harmless method of recording the electrical activity of groups of brain ells. EEG provides robust real-time insight into the brain; and Muse is the most versatile and easy-to-use EEG system available.</p>
-              <a href="http://developer.choosemuse.com/hardware-firmware/hardware-specifications">More Info</a>
-            </div>
-          </div>
-        </div>
+	    		</div>
+	    		<div class="row">
+	    			<div class="">
 
-        <!-- Fourth Page -->
-        <div id="fourth-page" class="section">
-          The Attention Memory Graph and Working Memory
-          <br><br>
-          <div class="row">
-            <!-- img for matlab graph -->
-            <div class="col s6">
-              <!-- Setup Place holder -->
-              <p>Attention Memory Graph</p>
-              <p>Your Short Term Memory</p>
-              <p>Your Long Term Memory</p>
-            </div>
-            <div class="col s6">
-              <img src="" alt="Attention Memory Graph">   
-            </div>
-          </div>
-          <div class="row">
-            <!-- img for matlab graph -->
-            <div class="col s6">
-              <img src="" alt="Working Memory Graph">   
-            </div>
-            <div class="col s6">
-              <p>Working Memory</p>
-            </div>
-          </div>  
-        </div>
-        <!-- Fifth Page -->
-        <div id="fifth-page" class="section">Some section</div>
-        <!-- Sixth Page -->
-        <div id="sixth-page" class="section">Some section</div>
-        <!-- Seventh Page -->
-        <div id="seventh-page" class="section">Some section</div>
-        <!-- Eigth Page -->
-        <div id="eigth-page" class="section">Some section</div>
-        <div id="eigth-page" class="section">MIND PONG
-      <h1>
-        COME PLAY OUR PYTHON GAME WITH YOUR MIND! id="centre"
-      </h1>
-     
-  </div>
-      </div>
-    </body>
+	    			</div>
+	    			<div class="">
+
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div id="fourth-page" class="section">Some section</div>
+	    	<div id="fifth-page" class="section">Some section</div>
+	    	<div id="sixth-page" class="section">Some section</div>
+	    	<div id="seventh-page" class="section">Some section</div>
+	    	<div id="eigth-page" class="section">Some section</div>
+	    </div>
+  	</body>
 </html>
