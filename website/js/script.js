@@ -73,3 +73,7 @@ $(document).ready(function() {
 		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
 	});
 });
+
+$('.start').click(function(){
+	$.fn.fullpage.moveSectionDown();
+});

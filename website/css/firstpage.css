@@ -1,0 +1,43 @@
+body{
+  background-color:#6ED2E6;
+  height:100%;
+  width:100%;
+}
+.contain-dots{
+  bottom:20px;
+  width:125px;
+  height:200px;
+  display: block;
+  margin:auto;
+}
+.ul-dots{
+  list-style:none;
+  display:inline-block;
+  width:100%;
+  padding:0;
+  padding-left:20px;
+}
+.contain-inside-dots{
+  display:inline-block;
+  width:30%;
+  height:100%;
+}
+.a-dot{
+  display:block;
+  margin:auto;
+  width:14px;
+  height:14px;
+  background:none;
+  border-radius:100px;
+  border:0.5px solid white;
+}
+.a-dot > span{
+  width:14px;
+  height:14px;
+  background-color:white;
+  transition: all 500ms ease-in-out;
+  border-radius:100px;
+  display:block;
+  transform: scale(0);
+  margin:auto;
+}

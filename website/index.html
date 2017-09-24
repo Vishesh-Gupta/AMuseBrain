@@ -6,21 +6,28 @@
   		<meta name="keywords" content="Muse, Arduino, MuseLab">
   		<meta name="author" content="Team AmuseBrains">
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    
+
 	    <title>AmuseBrains</title>
-	    
+
 	    <link rel="shortcut_icon" src="">
-	    
+
 	    <!-- Compiled and minified CSS -->
-  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
   		<link rel="stylesheet" href="css/jquery.fullPage.css">
   		<link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/firstpage.css" />
+
 
   		<!-- Compiled and minified JavaScript -->
-  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>  
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+
 	    <script src="js/jquery.fullpage.min.js"></script>
 	    <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript" src="js/firstpage.js"></script>
 
 	</head>
   	<body>
@@ -30,10 +37,35 @@
 		          <!-- introduction -->
 		          <h1 class="first-heading">Welcome to <br> AmuseBrains</h1>
 		          <button class="start">Get Started</button>
+              <p class="little-des">
+                AmuseBrains is an app that utlizes Amuse. </br>
+                Confirm your connection by blinking three times.
+              </p>
 		          <!-- login icons -->
 
 		          <!-- Toast -->
+              <div class="contain-dots">
+                <div class="contain-dots-them">
+                  <ul class="ul-dots">
+                    <div class="contain-inside-dots">
+                      <li class="a-dot">
+                          <span id="firstBlinkFlash"></span>
+                      </li>
+                    </div>
+                    <div class="contain-inside-dots">
+                      <li class="a-dot">
+                          <span id="secondBlinkFlash"></span>
+                      </li>
+                    </div>
+                    <div class="contain-inside-dots">
+                      <li class="a-dot">
+                          <span id="thirdBlinkFlash"></span>
+                      </li>
+                    </div>
 
+                  </ul>
+                </div>
+              </div>
 		        </div>
 	      	</div>
 	    	<div id="second-page" class="section">
@@ -72,21 +104,21 @@
           					</div>
         				</div>
 	    			</div>
-	    				
+
 	    			<p>Here we go you have checked all our hardware requirements that you need to connect with the service</p>
 	    		</div>
 	    	</div>
 	    	<div id="third-page" class="section">
-	    		
+
 	    		<div class="row">
-	    			
+
 	    		</div>
 	    		<div class="row">
 	    			<div class="">
 
 	    			</div>
 	    			<div class="">
-	    				
+
 	    			</div>
 	    		</div>
 	    	</div>
