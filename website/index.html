@@ -1,101 +1,100 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Amuse</title>
-    <link rel="stylesheet" href="jquery.fullPage.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <script src="jquery.fullpage.min.js"></script>
-    <script>
-    $(document).ready(function() {
-	$('#fullpage').fullpage({
-		//Navigation
-		menu: '#menu',
-		lockAnchors: false,
-		anchors:['firstPage', 'secondPage'],
-		navigation: false,
-		navigationPosition: 'right',
-		navigationTooltips: ['firstSlide', 'secondSlide'],
-		showActiveTooltip: false,
-		slidesNavigation: false,
-		slidesNavPosition: 'bottom',
+<html lang="en">
+  	<head>
+	    <meta charset="UTF-8">
+  		<meta name="description" content="AmuseBrains">
+  		<meta name="keywords" content="Muse, Arduino, MuseLab">
+  		<meta name="author" content="Team AmuseBrains">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+	    <title>AmuseBrains</title>
+	    
+	    <link rel="shortcut_icon" src="">
+	    
+	    <!-- Compiled and minified CSS -->
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  		<link rel="stylesheet" href="css/jquery.fullPage.css">
+  		<link rel="stylesheet" href="css/style.css">
 
-		//Scrolling
-		css3: true,
-		scrollingSpeed: 700,
-		autoScrolling: true,
-		fitToSection: true,
-		fitToSectionDelay: 1000,
-		scrollBar: false,
-		easing: 'easeInOutCubic',
-		easingcss3: 'ease',
-		loopBottom: false,
-		loopTop: false,
-		loopHorizontal: true,
-		continuousVertical: false,
-		continuousHorizontal: false,
-		scrollHorizontally: false,
-		interlockedSlides: false,
-		dragAndMove: false,
-		offsetSections: false,
-		resetSliders: false,
-		fadingEffect: false,
-		normalScrollElements: '#element1, .element2',
-		scrollOverflow: false,
-		scrollOverflowReset: false,
-		scrollOverflowOptions: null,
-		touchSensitivity: 15,
-		normalScrollElementTouchThreshold: 5,
-		bigSectionsDestination: null,
+  		<!-- Compiled and minified JavaScript -->
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>  
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="js/jquery.fullpage.min.js"></script>
+	    <script type="text/javascript" src="js/script.js"></script>
 
-		//Accessibility
-		keyboardScrolling: true,
-		animateAnchor: true,
-		recordHistory: true,
+	</head>
+  	<body>
+	    <div id="fullpage">
+	    	<div id="first-page" class="section">
+		        <div class="contain-content">
+		          <!-- introduction -->
+		          <h1 class="first-heading">Welcome to <br> AmuseBrains</h1>
+		          <button class="start">Get Started</button>
+		          <!-- login icons -->
 
-		//Design
-		controlArrows: true,
-		verticalCentered: true,
-		sectionsColor : ['#ccc', '#fff'],
-		paddingTop: '3em',
-		paddingBottom: '10px',
-		fixedElements: '#header, .footer',
-		responsiveWidth: 0,
-		responsiveHeight: 0,
-		responsiveSlides: false,
-		parallax: false,
-		parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+		          <!-- Toast -->
 
-		//Custom selectors
-		sectionSelector: '.section',
-		slideSelector: '.slide',
+		        </div>
+	      	</div>
+	    	<div id="second-page" class="section">
+	    		<div class="contain-usage">
+	    			<p>How to use AmuseBrains:</p>
+	    			<p>It's very simple to use our service. You need a few hardwares to make this thing run</p>
+	    			<div class="row csenter">
+				         <div class="col s4 m4">
+          					<div class="card orange hoverable">
+            					<div class="card-image">
+              						<img src="assets/images/arduino.png">
+            					</div>
+            					<div class="card-content">
+              						<p><strong>Arduino</strong></p>
+            					</div>
+            				</div>
+          				</div>
+	    				<div class="col s4 m4">
+          					<div class="card hoverable">
+            					<div class="card-image">
+              						<img src="assets/images/muse.png">
+            					</div>
+            					<div class="card-content">
+              						<p><strong>Muse</strong></p>
+            					</div>
+          					</div>
+        				</div>
+				        <div class="col s4 m4">
+          					<div class="card hoverable blue">
+            					<div class="card-image">
+              						<img src="assets/images/muselab.png">
+            					</div>
+            					<div class="card-content">
+              						<p><strong>MuseLab SDK</strong></p>
+            					</div>
+          					</div>
+        				</div>
+	    			</div>
+	    				
+	    			<p>Here we go you have checked all our hardware requirements that you need to connect with the service</p>
+	    		</div>
+	    	</div>
+	    	<div id="third-page" class="section">
+	    		
+	    		<div class="row">
+	    			
+	    		</div>
+	    		<div class="row">
+	    			<div class="">
 
-		lazyLoading: true,
-
-		//events
-		onLeave: function(index, nextIndex, direction){},
-		afterLoad: function(anchorLink, index){},
-		afterRender: function(){},
-		afterResize: function(){},
-		afterResponsive: function(isResponsive){},
-		afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-		onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-	});
-});
-</script>
-  </head>
-  <body>
-    <div id="fullpage">
-    	<div id="first-page" class="section">
-        <div class="contain-content">
-          <h1 class="first-heading">Welcome to Amuse.</h1>
-          <button class="start">Get Started</button>
-        </div>
-      </div>
-    	<div id="second-page" class="section">Some section</div>
-    	<div id="third-page" class="section">Some section</div>
-    	<div id="fourth-page" class="section">Some section</div>
-    </div>
-  </body>
+	    			</div>
+	    			<div class="">
+	    				
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div id="fourth-page" class="section">Some section</div>
+	    	<div id="fifth-page" class="section">Some section</div>
+	    	<div id="sixth-page" class="section">Some section</div>
+	    	<div id="seventh-page" class="section">Some section</div>
+	    	<div id="eigth-page" class="section">Some section</div>
+	    </div>
+  	</body>
 </html>
