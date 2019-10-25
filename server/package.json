@@ -13,7 +13,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
     "hbs": "^4.0.1",
-    "mongoose": "^4.11.12",
+    "mongoose": "^5.7.5",
     "socket.io": "1.7.4"
   }
 }
